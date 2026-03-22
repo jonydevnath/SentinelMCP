@@ -1,0 +1,13 @@
+version: 1
+runtime: python
+entry: src/SentinelMCP/server.py
+
+build:
+  install: uv sync --frozen --no-dev
+
+startCommand:
+  type: http
+  command: .venv/bin/python -m SentinelMCP.server
+
+configSchema:
+  source: code

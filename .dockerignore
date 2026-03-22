@@ -1,0 +1,15 @@
+.git
+.venv
+.env
+.env.*
+.pytest_cache
+.ruff_cache
+__pycache__
+tests/
+*.md
+*.pyc
+.DS_Store
+.vscode/
+.cursor/
+.mcpize/
+scripts/

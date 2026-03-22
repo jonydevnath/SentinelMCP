@@ -1,0 +1,54 @@
+# MCP Server Development Rules
+
+## Project Context
+Python MCP server for MCPize using FastMCP 2.0 with src-layout.
+
+## Structure
+- src/my_mcp_server/tools.py: Pure tool functions (testable)
+- src/my_mcp_server/server.py: FastMCP app, registers tools
+- tests/test_tools.py: Unit tests
+- tests/conftest.py: Pytest fixtures
+
+## Code Style
+- Python 3.13 with modern type hints
+- Google-style docstrings (Args/Returns)
+- Tools return dict[str, str] (all values as strings for JSON)
+- Use async def for I/O (httpx, databases, files)
+- Logging: logger.info("message %s", value) — lazy evaluation
+
+## Tool Pattern
+Define pure function in tools.py:
+```python
+def my_tool(param: str) -> dict[str, str]:
+    """Description for LLM.
+
+    Args:
+        param: What this does.
+
+    Returns:
+        Result dictionary.
+    """
+    return {"result": param}
+```
+
+Register in server.py:
+```python
+from .tools import my_tool
+mcp.tool()(my_tool)
+```
+
+## Commands
+```
+make help     # Show all commands
+make dev      # Install dependencies
+make run      # Start server
+make test     # Run pytest
+make lint     # Check with ruff
+make format   # Auto-format
+```
+
+## Important
+- Server: http://localhost:8080/mcp
+- Tests: Write test class per tool in tests/test_tools.py
+- Config: Use getenv() with defaults
+- Types: All tool return values as strings in dict
