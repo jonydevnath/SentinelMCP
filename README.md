@@ -10,10 +10,8 @@ MCP server built with [FastMCP 2.0](https://gofastmcp.com) for [MCPize](https://
 Use this MCP server instantly with no local installation:
 
 ```bash
-npx -y mcpize connect @jonydevnath.offsec/sentinelmcp --client claude
+https://mcpize.com/mcp/sentinelmcp
 ```
-
-Or connect at: **https://mcpize.com/mcp/sentinelmcp**
 
 ## Requirements
 
