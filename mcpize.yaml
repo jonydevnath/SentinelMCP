@@ -1,13 +1,16 @@
+# MCPize Configuration
+# Docs: https://mcpize.com/docs/mcpize-yaml
+
 version: 1
+
+name: "SentinelMCP"
+slug: "sentinelmcp"
+
 runtime: python
-entry: src/SentinelMCP/server.py
 
 build:
-  install: uv sync --frozen --no-dev
+  install: "uv sync --frozen --no-dev"
 
-startCommand:
+start:
   type: http
-  command: .venv/bin/python -m SentinelMCP.server
-
-configSchema:
-  source: code
+  command: ".venv/bin/python -m SentinelMCP.server"
