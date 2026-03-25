@@ -1,6 +1,5 @@
 # SentinelMCP
 
-[![MCPize](https://mcpize.com/mcp/sentinelmcp)
 [![MCPize](https://mcpize.com/badge/@mcpize/mcpize?type=hosted)](https://mcpize.com)
 
 MCP server built with [FastMCP 2.0](https://gofastmcp.com) for [MCPize](https://mcpize.com). It exposes security-focused tools: secret scanning, static code checks, dependency auditing, input-handling heuristics, and a combined report with a 0–100 score.
